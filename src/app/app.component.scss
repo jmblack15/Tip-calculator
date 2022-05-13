@@ -1,0 +1,38 @@
+@import '../assets/styles/vars';
+@import '../assets/styles/mixins.scss';
+
+h1 {
+  text-align: center;
+  margin    : 30px 0;
+}
+
+.card {
+  background-color: $white;
+  padding         : 25px;
+
+  .card-calculator {
+    display       : flex;
+    flex-direction: column;
+
+    .calculator-sections {
+      @include calculator-section;
+
+      .calculator-titles {
+        @include calculator-title;
+      }
+
+      .calculator-inputs {
+        @include calculator-input;
+      }
+
+      .calculator-buttons {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        .button{
+          @include calculator-button;
+        }
+      }
+    }
+  }
+}
